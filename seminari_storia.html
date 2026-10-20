@@ -1,98 +1,429 @@
-<html>
+<!DOCTYPE html>
+<html lang="it">
 
 <head>
 <meta charset="UTF-8">
 <title>Seminari di Storia delle matematiche – Riccardo Bellé</title>
+
+<style>
+
+:root {
+    --larghezza: 88%;
+    --verde: #185b38;
+    --sfondo: #f3f0e7;
+    --pagina: #fffdf7;
+    --bordo: #d7d0be;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #222;
+    background: var(--sfondo);
+    line-height: 1.55;
+}
+
+a {
+    color: var(--verde);
+}
+
+.container {
+    width: var(--larghezza);
+    margin: 0 auto;
+}
+
+.page {
+    background: var(--pagina);
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+
+/* =========================
+   TESTATA
+   ========================= */
+
+header {
+    text-align: center;
+    padding: 35px 0 20px 0;
+}
+
+.logo-seminari {
+    max-width: 600px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+h1 {
+    margin: 0;
+    color: var(--verde);
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+
+/* =========================
+   ANNI ACCADEMICI
+   ========================= */
+
+.anni {
+    margin: 24px auto 35px auto;
+    text-align: center;
+    padding: 12px 18px;
+    background: #f8f6ef;
+    border-top: 1px solid var(--bordo);
+    border-bottom: 1px solid var(--bordo);
+}
+
+.anni a {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 12px;
+}
+
+.anni a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   INTRODUZIONE
+   ========================= */
+
+.intro {
+    font-size: 1.05em;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   TITOLI ANNI
+   ========================= */
+
+h2 {
+    color: var(--verde);
+    font-size: 1.8em;
+    border-bottom: 1px solid #b9b19f;
+    padding-bottom: 6px;
+    margin-top: 35px;
+}
+
+
+/* =========================
+   CARD SEMINARI
+   ========================= */
+
+.seminari-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #f8f6ef;
+    border: 1px solid var(--bordo);
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.data {
+    font-weight: bold;
+    color: var(--verde);
+    margin-bottom: 8px;
+}
+
+.relatore {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.titolo {
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.locandina a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.locandina a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   DOPPIO SEMINARIO
+   ========================= */
+
+.card-doppia {
+    grid-column: span 2;
+}
+
+.intervento + .intervento {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--bordo);
+}
+
+
+/* =========================
+   RITORNO
+   ========================= */
+
+.ritorno {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bordo);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    :root {
+        --larghezza: 92%;
+    }
+
+    .seminari-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-doppia {
+        grid-column: span 1;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .anni a {
+        display: inline-block;
+        margin: 5px 8px;
+    }
+}
+
+</style>
+
 </head>
 
-<body TEXT="black" BGCOLOR="white" LINK="blue" VLINK="blue">
 
-<font face="Arial">
+<body>
 
-<!-- Intestazione -->
+<div class="page">
 
-<TABLE WIDTH="70%" align="center">
-  <TR>
-    <TD>
-      <br><hr noshade="noshade"><br>
-      <p align="center">
-        <img src="logo_seminari_st_mat.png" alt="Logo seminari" width="600"><br><br>
-        <font SIZE="+4">Seminari di Storia delle matematiche</font>
-      </p>
-      <hr WIDTH="60%" align="center">
-    </TD>
-  </TR>
-</TABLE>
+<div class="container">
 
-<font SIZE="+2">
+<header>
 
-<!-- Introduzione -->
+    <img src="logo_seminari_st_mat.png"
+         alt="Logo Seminari di Storia delle matematiche"
+         class="logo-seminari">
 
-<p>
-Questa pagina raccoglie i seminari di Storia delle matematiche organizzati nell’ambito delle attività di ricerca presso il Dipartimento di Matematica dell'Uniersità di Roma "Tor Vergata".
-</p>
+    <h1>Seminari di Storia delle matematiche</h1>
 
-<br>
+</header>
 
-<!-- Anno accademico -->
 
-<p><b>Anno accademico 2025/2026</b></p>
+<div class="anni">
+    <a href="#aa2025-2026">2025/2026</a>
+    |
+    <a href="#aa2026-2027">2026/2027</a>
+</div>
 
-<ul>
 
-  <li>
-    <b>Lunedì 1 dicembre 2025</b><br>
-    Isabella Fascitiello (Università di Roma Tre)<br>
-    <i>Andrej N. Kolmogorov, “The general theory of dynamical systems and classical mechanics” (1957): alla scoperta di una nuova grammatica metrica e spettrale per lo studio dei sistemi dinamici</i><br>
-    <a href="2025-12-01_seminario_fascitiello.pdf">Locandina</a>
-  </li>
-
-  <br>
-
-  <li>
-    <b>Mercoledì 21 gennaio 2026</b><br>
-    Veronica Gavagna (Università di Firenze)<br>
-    <i>L’algebra di Rafael Bombelli e i suoi testimoni manoscritti: nuove prospettive di ricerca</i><br>
-    <a href="2026-01-21_seminario_gavagna.pdf">Locandina</a>
-  </li>
-
-  <br>
-
-  <li>
-    <b>Mercoledì 11 febbraio 2026</b><br>
-    Jens Høyrup (Roskilde University)<br>
-    <i>The complex historical process that resulted in the creation of Viète’s and Descartes’ “new algebra”: oblique light on the Zilsel thesis</i><br>
-    <a href="2026-02-11_seminario_hoyrup.pdf">Locandina</a><br><br>
-
-    Silvia Lanaro (Sapienza, Università di Roma)<br>
-    <i>Un approccio visuale per il primo libro delle Coniche di Apollonio</i><br>
-    <a href="2026-02-11_seminario_lanaro.pdf">Locandina</a>
-  </li>
-
-  <br>
-
-  <li>
-    <b>Mercoledì 25 marzo 2026</b><br>
-    Cristina Sironi (Università di Roma "Tor Vergata")<br>
-    <i>La querelle Maupertuis–König sulla priorità del principio di minima azione. Gli interventi postumi attraverso le lettere di Éléonore de Borck, vedova de Maupertuis</i><br>
-    <a href="2026-03-25_seminario_sironi.pdf">Locandina</a>
-  </li>
-
-</ul>
-
-<br>
-
-<!-- Link di ritorno -->
+<div class="intro">
 
 <p>
-<a href="index.html">Torna alla pagina principale</a>
+Questa pagina raccoglie i seminari di Storia delle matematiche
+organizzati nell’ambito delle attività di ricerca presso il
+Dipartimento di Matematica dell'Università di Roma Tor Vergata.
 </p>
 
-</font>
+</div>
 
-<br>
-<hr WIDTH="60%" align="center">
 
-</font>
+<!-- =========================
+     2025/2026
+     ========================= -->
+
+<section id="aa2025-2026">
+
+<h2>Anno accademico 2025/2026</h2>
+
+<div class="seminari-grid">
+
+
+<div class="card">
+
+    <div class="data">
+        Lunedì 1 dicembre 2025
+    </div>
+
+    <div class="relatore">
+        Isabella Fascitiello
+        <span style="font-weight: normal;">
+        (Università di Roma Tre)
+        </span>
+    </div>
+
+    <div class="titolo">
+        Andrej N. Kolmogorov, “The general theory of dynamical systems
+        and classical mechanics” (1957): alla scoperta di una nuova
+        grammatica metrica e spettrale per lo studio dei sistemi dinamici
+    </div>
+
+    <div class="locandina">
+        <a href="2025-12-01_seminario_fascitiello.pdf">Locandina</a>
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <div class="data">
+        Mercoledì 21 gennaio 2026
+    </div>
+
+    <div class="relatore">
+        Veronica Gavagna
+        <span style="font-weight: normal;">
+        (Università di Firenze)
+        </span>
+    </div>
+
+    <div class="titolo">
+        L’algebra di Rafael Bombelli e i suoi testimoni manoscritti:
+        nuove prospettive di ricerca
+    </div>
+
+    <div class="locandina">
+        <a href="2026-01-21_seminario_gavagna.pdf">Locandina</a>
+    </div>
+
+</div>
+
+
+<div class="card card-doppia">
+
+    <div class="data">
+        Mercoledì 11 febbraio 2026
+    </div>
+
+    <div class="intervento">
+
+        <div class="relatore">
+            Jens Høyrup
+            <span style="font-weight: normal;">
+            (Roskilde University)
+            </span>
+        </div>
+
+        <div class="titolo">
+            The complex historical process that resulted in the creation
+            of Viète’s and Descartes’ “new algebra”:
+            oblique light on the Zilsel thesis
+        </div>
+
+        <div class="locandina">
+            <a href="2026-02-11_seminario_hoyrup.pdf">Locandina</a>
+        </div>
+
+    </div>
+
+
+    <div class="intervento">
+
+        <div class="relatore">
+            Silvia Lanaro
+            <span style="font-weight: normal;">
+            (Sapienza, Università di Roma)
+            </span>
+        </div>
+
+        <div class="titolo">
+            Un approccio visuale per il primo libro delle Coniche di Apollonio
+        </div>
+
+        <div class="locandina">
+            <a href="2026-02-11_seminario_lanaro.pdf">Locandina</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="card">
+
+    <div class="data">
+        Mercoledì 25 marzo 2026
+    </div>
+
+    <div class="relatore">
+        Cristina Sironi
+        <span style="font-weight: normal;">
+        (Università di Roma Tor Vergata)
+        </span>
+    </div>
+
+    <div class="titolo">
+        La querelle Maupertuis–König sulla priorità del principio di minima azione.
+        Gli interventi postumi attraverso le lettere di Éléonore de Borck,
+        vedova de Maupertuis
+    </div>
+
+    <div class="locandina">
+        <a href="2026-03-25_seminario_sironi.pdf">Locandina</a>
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     2026/2027
+     ========================= -->
+
+<section id="aa2026-2027">
+
+<h2>Anno accademico 2026/2027</h2>
+
+<div class="seminari-grid">
+
+<div class="card">
+    <div class="titolo">
+        Programma in aggiornamento.
+    </div>
+</div>
+
+</div>
+
+</section>
+
+
+<div class="ritorno">
+    <a href="index.html">Torna alla pagina principale</a>
+</div>
+
+
+</div>
+
+</div>
+
 </body>
+
 </html>
